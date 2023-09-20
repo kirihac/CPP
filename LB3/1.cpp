@@ -1,7 +1,7 @@
+//15 variant
 #include <iostream>
 #include <string>
 #include <math.h>
-//15 variant
 using namespace std;
 
 int main() {
