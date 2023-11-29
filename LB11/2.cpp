@@ -20,7 +20,7 @@ int main() {
         cout << "Entered hours more then 24\n";
         goto start;
     }
-    if (start_time.minutes > 60){
+    if (start_time.minutes >= 60){
         cout << "Entered minutes more then 60\n";
         goto start;
     }
@@ -30,7 +30,7 @@ int main() {
         cout << "Entered hours more then 24\n";
         goto start;
     }
-    if (end_time.minutes > 60){
+    if (end_time.minutes >= 60){
         cout << "Entered minutes more then 60\n";
         goto start;
     }
@@ -38,9 +38,9 @@ int main() {
     start_time_in_minutes = start_time.hours*60+start_time.minutes;
     end_time_in_minutes = end_time.hours*60+end_time.minutes;
     event_duration_time_in_minutes = end_time_in_minutes-start_time_in_minutes;
+    if (event_duration_time_in_minutes<0)
+        event_duration_time_in_minutes += 24*60;
     event_duration_time.hours = event_duration_time_in_minutes/60;
-    while (event_duration_time.hours>24)
-        event_duration_time.hours -= 24;
     event_duration_time.minutes = event_duration_time_in_minutes%60;
     cout << event_duration_time.hours<< ":"<< event_duration_time.minutes;
 }

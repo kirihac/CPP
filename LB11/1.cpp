@@ -21,7 +21,7 @@ int main() {
     }
     cout << "Enter minutes:";
     cin >> start_time.minutes;
-    if (start_time.minutes > 60){
+    if (start_time.minutes >= 60){
         cout << "Entered more then 60\n";
         goto start;
     }
